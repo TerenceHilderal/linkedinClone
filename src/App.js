@@ -3,7 +3,7 @@ import Header from './Header';
 const App = () => {
 	return (
 		<div>
-			<h1 className='app'>Let's build a linkedin CLone</h1>
+			<h1 className='app'></h1>
 			<Header />
 		</div>
 
