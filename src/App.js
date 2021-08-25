@@ -1,14 +1,17 @@
 import Header from './Header';
+import Sidebar from './Sidebar';
+import './App.css';
 
 const App = () => {
 	return (
 		<div>
-			<h1 className='app'></h1>
-			<Header />
+			<div className='app'>
+				<Header />
+				<div className='app__body'>
+					<Sidebar />
+				</div>
+			</div>
 		</div>
-
-		// header
-		// app body
 		// left side
 		// feed
 		// widgets
