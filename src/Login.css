@@ -27,3 +27,28 @@
 	margin-bottom: 10px;
 	border-radius: 5px;
 }
+.login > form > input {
+	width: 350px;
+	height: 50px;
+	font-size: 20px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.login > form > button {
+	width: 365px;
+	height: 50px;
+	font-size: large;
+	border-radius: 5px;
+	background-color: #0074b1;
+	color: white;
+}
+
+.login__register {
+	color: #0074b7;
+	cursor: pointer;
+}
+.login > p {
+	margin-top: 20px;
+}

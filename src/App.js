@@ -2,12 +2,34 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Feed from './Feed';
 import Login from './Login';
-import { useSelector } from 'react-redux';
-import { selectUser } from './features/userSlice';
+import Widgets from './Widgets';
+import { auth } from './Firebase';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUser, logout, login } from './features/userSlice';
 import './App.css';
 
 const App = () => {
 	const user = useSelector(selectUser);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		auth.onAuthStateChanged((userAuth) => {
+			if (userAuth) {
+				dispatch(
+					login({
+						email: userAuth.email,
+						uid: userAuth.uid,
+						displayName: userAuth.displayName,
+						photoUrl: userAuth.photoURL,
+					}),
+				);
+			} else {
+				dispatch(logout());
+			}
+		});
+	}, []);
+
 	return (
 		// <div>
 		<div className='app'>
@@ -18,6 +40,7 @@ const App = () => {
 				<div className='app__body'>
 					<Sidebar />
 					<Feed />
+					<Widgets />
 				</div>
 			)}
 		</div>
