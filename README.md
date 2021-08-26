@@ -1,4 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## About the project
+
+Linkedin clone made with react ,redux and firebase ( in progress ):
+Deployed on firebase at : https://linkedin-clone-a024d.web.app
+
+A lot of functionnality to come :
+
+- CRUD operation
+- Comment system
+- Like system
+- Share system
+
+this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
 

@@ -65,7 +65,7 @@ function Login() {
 					type='text'
 					value={name}
 					onChange={(e) => setName(e.target.value)}
-					placeholder='fullname (required if registering'
+					placeholder='fullname (required if registering)'
 				/>
 				<input
 					type='text'

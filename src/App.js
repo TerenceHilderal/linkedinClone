@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectUser, logout, login } from './features/userSlice';
 import './App.css';
 
+// https://linkedin-clone-a024d.web.app
 const App = () => {
 	const user = useSelector(selectUser);
 	const dispatch = useDispatch();
