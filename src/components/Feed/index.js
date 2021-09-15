@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './Feed.css';
-import Post from './Post';
-import InputOption from './InputOption';
+import Post from '../Post';
+import InputOption from '../InputOption';
 import CreateIcon from '@material-ui/icons/Create';
 import ImageIcon from '@material-ui/icons/Image';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 import FlipMove from 'react-flip-move';
-import { db } from './Firebase';
+import { db } from '../../Firebase';
 import firebase from 'firebase';
 import { useSelector } from 'react-redux';
-import { selectUser } from './features/userSlice';
+import { selectUser } from '../../features/userSlice';
 
 function Feed() {
 	const user = useSelector(selectUser);
@@ -43,7 +43,6 @@ function Feed() {
 		});
 		setInput('');
 	};
-	console.log(input);
 
 	return (
 		<div className='feed'>

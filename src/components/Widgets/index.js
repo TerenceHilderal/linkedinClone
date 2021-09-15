@@ -23,12 +23,12 @@ function Widgets() {
 				<h2>Linkedin News</h2>
 				<InfoIcon />
 			</div>
-			{newsArticle('Papa React is back', 'Top news - 9099 readers')}
-			{newsArticle('Papa React is back', 'Top news - 9099 readers')}
-			{newsArticle('Papa React is back', 'Top news - 9099 readers')}
-			{newsArticle('Papa React is back', 'Top news - 9099 readers')}
-			{newsArticle('Papa React is back', 'Top news - 9099 readers')}
-			{newsArticle('Papa React is back', 'Top news - 9099 readers')}
+			{newsArticle('Terence Hilderal', 'To Hire - 9099 readers')}
+			{newsArticle('Terence Hilderal', 'Top Freelance - Frontend')}
+			{newsArticle('Terence Hilderal', 'React.js - Next.js')}
+			{newsArticle('Terence Hilderal', 'Top Freelance - Backend')}
+			{newsArticle('Terence Hilderal', 'Node.js - Express.js')}
+			{newsArticle('All my projects', 'https://github.com/TerenceHilderal')}
 		</div>
 	);
 }

@@ -1,13 +1,15 @@
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Feed from './Feed';
-import Login from './Login';
-import Widgets from './Widgets';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Feed from './components/Feed';
+import Login from './components/Login';
+import Signin from './components/Signin';
+import Widgets from './components/Widgets';
 import { auth } from './Firebase';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser, logout, login } from './features/userSlice';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // https://linkedin-clone-a024d.web.app
 const App = () => {
@@ -32,23 +34,24 @@ const App = () => {
 	}, []);
 
 	return (
-		// <div>
-		<div className='app'>
-			<Header />
-			{!user ? (
-				<Login />
-			) : (
-				<div className='app__body'>
-					<Sidebar />
-					<Feed />
-					<Widgets />
-				</div>
-			)}
-		</div>
-		// </div>
-		// left side
-		// feed
-		// widgets
+		<Router>
+			<div className='app'>
+				<Header />
+				<Route exact path='/signin' component={Signin} />
+				{!user ? (
+					// <Login />
+					<Route exact path='/' component={Login} />
+				) : (
+					// <Signin />
+					<div className='app__body'>
+						<Sidebar />
+						{/* <Feed /> */}
+						<Route exact path='/feed' component={Feed} />
+						<Widgets />
+					</div>
+				)}
+			</div>
+		</Router>
 	);
 };
 

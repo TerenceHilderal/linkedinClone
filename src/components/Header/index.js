@@ -1,21 +1,21 @@
 import './Header.css';
-import HeaderOption from './HeaderOption';
+import HeaderOption from '../HeaderOption';
 import { useDispatch } from 'react-redux';
-import { auth } from './Firebase';
-import { logout } from './features/userSlice';
+import { auth } from '../../Firebase';
+import { logout } from '../../features/userSlice';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
-import FaceIcon from '@material-ui/icons/Face';
+import { withRouter } from 'react-router';
 
-const Header = () => {
+const Header = ({ history }) => {
 	const dispatch = useDispatch();
 	const logoutOfApp = () => {
 		dispatch(logout());
-		auth.signOut();
+		auth.signOut().then(() => history.push('/'));
 	};
 
 	return (
@@ -42,4 +42,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default withRouter(Header);

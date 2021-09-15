@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectUser } from './features/userSlice';
+import { selectUser } from '../../features/userSlice';
 import './HeaderOption.css';
 import { Avatar } from '@material-ui/core';
 
