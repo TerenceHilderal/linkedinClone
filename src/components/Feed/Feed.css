@@ -1,6 +1,7 @@
 .feed {
 	flex: 0.5;
 	margin: 0 20px;
+	background-color: whitesmoke;
 }
 
 .feed__inputContainer {
@@ -39,4 +40,10 @@
 .feed__inputOptions {
 	display: flex;
 	justify-content: space-evenly;
+}
+
+@media (max-width: 865px) {
+	.feed {
+		/* margin-top: 750px; */
+	}
 }

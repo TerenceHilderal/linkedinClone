@@ -39,13 +39,10 @@ const App = () => {
 				<Header />
 				<Route exact path='/signin' component={Signin} />
 				{!user ? (
-					// <Login />
 					<Route exact path='/' component={Login} />
 				) : (
-					// <Signin />
 					<div className='app__body'>
 						<Sidebar />
-						{/* <Feed /> */}
 						<Route exact path='/feed' component={Feed} />
 						<Widgets />
 					</div>

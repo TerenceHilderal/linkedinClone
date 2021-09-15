@@ -29,6 +29,7 @@ function Sidebar() {
 				<h2>{user.displayName}</h2>
 				<h4>{user.email}</h4>
 			</div>
+
 			<div className='sidebar__stats'>
 				<div className='sidebar__stat'>
 					<p>Who viewed you</p>
@@ -39,6 +40,7 @@ function Sidebar() {
 					<p className='sidebar__statNumber'>2.524</p>
 				</div>{' '}
 			</div>
+
 			<div className='sidebar__bottom'>
 				<p>Recent</p>
 				{recentItem('reactjs')}
