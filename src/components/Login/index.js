@@ -14,23 +14,6 @@ function Login() {
 	const [redirect, setRedirect] = useState(false);
 	const dispatch = useDispatch();
 
-	// const signinToApp = (e) => {
-	// 	e.preventDefault();
-	// 	auth
-	// 		.signInWithEmailAndPassword(email, password)
-	// 		.then((userAuth) => {
-	// 			dispatch(
-	// 				login({
-	// 					email: userAuth.user.email,
-	// 					uid: userAuth.user.uid,
-	// 					displayName: userAuth.user.displayName,
-	// 					profileUrl: userAuth.user.photoURL,
-	// 				}),
-	// 			);
-	// 		})
-	// 		.catch((error) => alert(error.message));
-	// };
-
 	const register = () => {
 		if (!name) {
 			return alert('Sorry');
