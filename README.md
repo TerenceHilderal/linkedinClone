@@ -2,7 +2,7 @@
 
 Linkedin clone
 
-Deployed on firebase at : https://linkedin-clone-a024d.web.app
+Deployed on firebase at 
 
 # Stack
 
