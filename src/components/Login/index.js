@@ -14,29 +14,39 @@ function Login() {
 	const [redirect, setRedirect] = useState(false);
 	const dispatch = useDispatch();
 
-	const register = () => {
+	const register = (e) => {
+		e.preventDefault();
 		if (!name) {
-			return alert('Sorry');
+			return alert('Sorry you should have a name');
 		}
-		auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
-			userAuth.user
-				.updateProfile({
-					displayName: name,
-					photoUrl: profilePic,
-				})
-				.then(() => {
-					dispatch(
-						login({
-							email: userAuth.user.email,
-							uid: userAuth.user.uid,
-							displayName: name,
-							photoUrl: profilePic,
-						}),
-					);
-					setRedirect(true);
-				})
-				.catch((error) => console.error(error));
-		});
+		if (password.length < 6) {
+			return alert('Your password is too short.');
+		}
+		if (!email) {
+			return alert('Your email is badly formatted.');
+		}
+
+		auth
+			.createUserWithEmailAndPassword(email, password)
+			.then((userAuth) => {
+				userAuth.user
+					.updateProfile({
+						displayName: name,
+						photoUrl: profilePic,
+					})
+					.then(() => {
+						dispatch(
+							login({
+								email: userAuth.user.email,
+								uid: userAuth.user.uid,
+								displayName: name,
+								photoUrl: profilePic,
+							}),
+						);
+					});
+				setRedirect(true);
+			})
+			.catch((error) => alert(error.message));
 	};
 
 	return (
@@ -73,9 +83,12 @@ function Login() {
 				{/* <button onClick={signinToApp}>Log In</button> */}
 			</form>
 			<button className='login__register' onClick={register}>
+				{' '}
 				Register
 			</button>
 			{redirect && <Redirect to='/feed' />}
+			{console.log(redirect)}
+
 			<NavLink to='/signin'> Already have an account? Sign in</NavLink>
 		</div>
 	);

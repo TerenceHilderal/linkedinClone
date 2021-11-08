@@ -54,6 +54,7 @@ const Signin = () => {
 					Sign In
 				</button>
 				{redirect && <Redirect to='/feed' />}
+
 				<NavLink to='/'> Join us - Register</NavLink>
 			</div>
 		</div>
