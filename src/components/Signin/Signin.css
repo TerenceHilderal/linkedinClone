@@ -44,6 +44,10 @@
 	background-color: #0074b1;
 	color: white;
 }
+.error {
+	color: red;
+	margin-bottom: 10px;
+}
 
 button {
 	width: 365px;

@@ -9,6 +9,8 @@ const Signin = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [redirect, setRedirect] = useState(false);
+	const [error, setError] = useState(false);
+	const [msgError, setMsgError] = useState('');
 	const dispatch = useDispatch();
 
 	const signinToApp = (e) => {
@@ -26,7 +28,10 @@ const Signin = () => {
 				);
 				setRedirect(true);
 			})
-			.catch((error) => alert(error.message));
+			.catch((error) => {
+				setError(true);
+				setMsgError(error.message);
+			});
 	};
 
 	return (
@@ -50,6 +55,7 @@ const Signin = () => {
 						placeholder='Password'
 					/>
 				</form>
+				{error && <span className='error'>{msgError}</span>}
 				<button className='login__register' onClick={signinToApp}>
 					Sign In
 				</button>

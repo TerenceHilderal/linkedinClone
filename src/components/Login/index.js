@@ -12,18 +12,21 @@ function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [redirect, setRedirect] = useState(false);
+	const [error, setError] = useState(false);
+	const [msgError, setMsgError] = useState('');
 	const dispatch = useDispatch();
 
 	const register = (e) => {
 		e.preventDefault();
 		if (!name) {
-			return alert('Sorry you should have a name');
+			// return alert('Sorry you should have a name');
+			setError(true);
 		}
 		if (password.length < 6) {
-			return alert('Your password is too short.');
+			// return alert('Your password is too short.');
 		}
 		if (!email) {
-			return alert('Your email is badly formatted.');
+			// return alert('Your email is badly formatted.');
 		}
 
 		auth
@@ -46,7 +49,10 @@ function Login() {
 					});
 				setRedirect(true);
 			})
-			.catch((error) => alert(error.message));
+			.catch((error) => {
+				setError(true);
+				setMsgError(error.message);
+			});
 	};
 
 	return (
@@ -82,12 +88,13 @@ function Login() {
 				/>
 				{/* <button onClick={signinToApp}>Log In</button> */}
 			</form>
+			{error && <span className='error'>{msgError}</span>}
+
 			<button className='login__register' onClick={register}>
 				{' '}
 				Register
 			</button>
 			{redirect && <Redirect to='/feed' />}
-			{console.log(redirect)}
 
 			<NavLink to='/signin'> Already have an account? Sign in</NavLink>
 		</div>
